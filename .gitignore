@@ -1,0 +1,10 @@
+.vercel/
+.env*
+*.mp4
+*.mov
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+# raw datasets are not mine to republish
+data/raw/
+data/processed/

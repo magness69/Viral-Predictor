@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<title>Will your post go viral?</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Will your post go viral?</h1>
+<p class="sub">Pick where you’ll post and in what format, or drop in a link or a video. You get the odds of landing in the top third of posts, and a realistic engagement range.</p>
+<div class="grid">
+<section class="card" aria-labelledby="h-in">
+<h2 id="h-in">Your post</h2>
+<div class="tabs" role="group" aria-label="Input method">
+<button type="button" id="tl" aria-pressed="true">Paste a link</button>
+<button type="button" id="tv" aria-pressed="false">Upload a video</button>
+</div>
+<div id="pl"><input type="text" id="link" placeholder="https://www.instagram.com/reel/…" aria-label="Link to a reel or video" autocomplete="off" spellcheck="false"><p class="hint" id="lm"></p></div>
+<div id="pv" hidden><label class="drop"><input type="file" id="file" accept="video/*">Choose a video file<br><small>It never leaves your device</small></label><p class="hint" id="fm"></p></div>
+<p class="lab">Platform</p><div class="chips" id="cp" role="group" aria-label="Platform"></div>
+<p class="lab">Format</p><div class="chips" id="ct" role="group" aria-label="Post format"></div>
+</section>
+<section class="card ringbox" aria-live="polite">
+<div class="ring"><svg viewBox="0 0 160 160" aria-hidden="true"><defs><linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop class="s1" offset="0"/><stop class="s2" offset="1"/></linearGradient></defs><circle class="t" cx="80" cy="80" r="70"/><circle class="p" id="arc" cx="80" cy="80" r="70"/></svg><div class="pct"><b id="pc">0%</b><span>chance of going viral</span></div></div>
+<p class="verdict" id="vd"></p>
+<p class="range" id="rg"></p>
+<div class="drv"><h2>What moves the score</h2><div id="dr"></div></div>
+</section>
+<section class="card wide" id="vc" hidden>
+<h2>Video details</h2>
+<div class="vid"><canvas id="cv" width="360" height="360"></canvas><div><dl id="dl"></dl><p class="note">These details don’t change the score. The training data has no video features (length, captions, hashtags), so the model only uses platform and format.</p></div></div>
+</section>
+<section class="card wide">
+<h2>How far to trust this</h2>
+<p class="note flat" id="tr"></p>
+<p class="note">Privacy: everything runs in your browser. Links are never opened and videos are never uploaded.</p>
+</section>
+</div>
+</main>
+<script src="model.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
